@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Booster Media - Franchisee Video Order Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brandDark: '#111827',
+            brandGray: '#1f2937',
+            brandMuted: '#6b7280',
+            brandPink: '#ec4899',
+            brandPurple: '#8b5cf6'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1f2937; }
+    .brand-gradient-text { background: linear-gradient(to right, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .btn-gradient { background-image: linear-gradient(to right, #ec4899 0%, #8b5cf6 51%, #ec4899 100%); background-size: 200% auto; transition: 0.5s; }
+    .btn-gradient:hover { background-position: right center; box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3); }
+    .card-editorial { background-color: #ffffff; border: 1px solid rgba(0, 0, 0, 0.04); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-editorial:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.15); box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.08); }
+    .view-container { display: none; }
+    .view-container.active { display: block; }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-3.5 sm:px-6 py-2.5 sm:py-4 flex items-center justify-between">
+      <div class="flex items-center cursor-pointer" onclick="showView('index')">
+        <img src="Brand Boosters Logo Icon - COLOR.png" alt="Brand Boosters Logo" class="w-9 h-9 sm:w-10 sm:h-10 object-contain mr-2 sm:mr-3" onerror="this.onerror=null;this.src='logo.png';">
+        <div>
+          <span class="font-extrabold text-xs sm:text-base tracking-tight text-brandDark block leading-tight">Brand Booster Media</span>
+          <span class="text-[7.5px] sm:text-[9px] font-black text-brandMuted uppercase tracking-widest block -mt-0.5">Video Order Pipeline</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-3">
+        <button onclick="showView('index')" class="p-2 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold text-brandGray hover:text-brandPurple bg-purple-50/80 sm:bg-gray-100 hover:bg-purple-100 transition flex items-center gap-1.5">
+          <i data-lucide="layout-grid" class="w-4 h-4 text-brandPurple sm:text-brandGray"></i>
+          <span class="hidden sm:inline">Portal Directory</span>
+        </button>
+
+        <div class="relative">
+          <select id="quick-form-select" onchange="showView(this.value)" class="px-2.5 sm:px-3 py-2 text-[11px] sm:text-xs font-bold bg-white border border-gray-200 rounded-xl text-brandDark focus:outline-none focus:border-brandPurple max-w-[130px] sm:max-w-none truncate">
+            <option value="" disabled selected>Switch Objective...</option>
+            <option value="form-1">1. Day in the Life</option>
+            <option value="form-2">2. Testimonials</option>
+            <option value="form-3">3. Staff Spotlights</option>
+            <option value="form-4">4. Highlight Reels</option>
+            <option value="form-5">5. Campus Tours</option>
+            <option value="form-6">6. Brand Story</option>
+            <option value="form-7">7. Program Explainers</option>
+            <option value="form-8">8. Alumni Success</option>
+            <option value="form-9">9. BTS & Fun</option>
+            <option value="form-10">10. Parent How-To</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+
+    <!-- VIEW: INDEX PORTAL -->
+    <div id="view-index" class="view-container active">
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-xl p-8 mb-10">
+        <span class="text-[10px] font-black uppercase tracking-widest text-brandPink bg-pink-50 px-3 py-1 rounded-full inline-block mb-3">Production Engine Portal</span>
+        <h1 class="text-3xl font-black text-brandDark tracking-tight">Interactive Video Order Portal</h1>
+        <p class="text-sm text-brandMuted mt-1 max-w-2xl">Select a video objective below to access its mandatory filming standards, placement recommendations, strict input constraints, and automated editor blueprint generator.</p>
+      </div>
+
+      <h2 class="text-xs font-black text-brandDark uppercase tracking-widest mb-6 flex items-center gap-2">
+        <i data-lucide="film" class="w-4 h-4 text-brandPink"></i>
+        Select Video Archetype
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 1</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">"Day in the Life" Student Journey</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Follow a student’s daily routine to show families exactly what their child will experience. This builds familiarity with the daily rhythm and transitions of your program.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Website Homepage, Social Pins</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-1')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 2</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Parent & Student Testimonials</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Authentic interviews where parents share their peace of mind and students discuss their favorite activities. These provide "social proof" that your program delivers real value and academic growth.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Decision Pages, Nurture Emails</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-2')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 3</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Teacher & Staff Spotlights</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Brief videos introducing staff members, their roles, and why they love teaching. This humanizes your brand and builds trust by showing the mentors who will be caring for the children.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Onboarding Portal, Email Signatures</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-3')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 4</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Program Highlight Reels</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              A montage of high-energy moments from sports, STEM projects, and arts and crafts. These showcase a vibrant community spirit and the diverse extracurricular opportunities available.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Meta Paid Ads, Event Landing Pages</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-4')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 5</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Virtual Campus & Facility Tours</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              A guided tour of your classrooms, playgrounds, and safety features. This helps prospective families feel comfortable with the environment before they ever step foot on campus.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Website Hero Header, Google Profile</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-5')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 6</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">"Mission Moment" / Brand Story</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              A "highlight reel" video that communicates your mission, core values, and what uniquely sets your program apart from others. It focuses on the "why" behind your service.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">About Us Page, Investor / Partner Deck</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-6')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 7</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Enrichment Program Explainers</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Detailed clips focusing on specific strengths, such as a specialized music department or a cutting-edge STEM lab. These attract families looking for specific academic or creative enrichment.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Targeted Meta Ads, Checkout Page</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-7')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 8</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Alumni Success Stories</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Featuring successful graduates who talk about how your program prepared them for their next steps in life. This demonstrates the long-term impact of your educational model.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Mid-Funnel Email, Retargeting Ads</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-8')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 9</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Behind-the-Scenes & "Fun" Moments</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Candid clips, like students telling jokes or staff preparing for a big event. These lighthearted videos foster a sense of belonging and community engagement.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Instagram Reels, TikTok Organic</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-9')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="card-editorial p-6 rounded-2xl flex flex-col justify-between h-full shadow-sm">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-[10px] font-extrabold text-brandPink uppercase tracking-widest bg-pink-50 px-2.5 py-1 rounded-full">Objective 10</span>
+            </div>
+            <h3 class="text-lg font-black text-brandDark mb-2">Educational "How-To" for Parents</h3>
+            <p class="text-brandMuted text-xs leading-relaxed font-normal mb-4">
+              Short explainer videos addressing common parent concerns, like "Managing the Homework Environment" or "Building Study Skills". These position your brand as a helpful partner in their child's development.
+            </p>
+            <div class="bg-purple-50/60 border border-purple-100 p-3 rounded-xl mb-6 text-[11px] flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brandPurple shrink-0"></i>
+              <div>
+                <span class="font-bold text-brandDark">Recommended Placement:</span>
+                <span class="text-brandMuted font-normal ml-1">Organic Social, Parent Newsletters</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="showView('form-10')" class="px-6 py-3 rounded-xl font-bold text-white text-xs text-center btn-gradient shadow-sm uppercase tracking-wider w-full">Open Order Form</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 1 -->
+    <div id="view-form-1" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 1</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">"Day in the Life" Student Journey</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Follow a student’s daily routine to show families exactly what their child will experience. This builds familiarity with the daily rhythm and transitions of your program.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Website Homepage, Social Pins</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Orientation:</strong> Hold your phone vertically (9:16 vertical ratio).</li>
+              <li>• <strong class="text-amber-950">The 5-Second Lock Rule:</strong> Stand completely still. Press record, count to 5, then stop. Do NOT pan or wave phone.</li>
+              <li>• <strong class="text-amber-950">Chronological Coverage:</strong> Capture exactly two 5-second clips for each of the 4 milestones listed below (8 clips total).</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="day_in_the_life">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Fall Campus Journey" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brandPurple outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brandPurple outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:border-brandPurple outline-none">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Tour Structure Type</label>
+              <select name="videoStyle" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Chronological Student Journey (4 Milestones)">Chronological Student Journey (4 Milestones)</option>
+                <option value="The Storyteller (Voiceover + Captions)">The Storyteller (Voiceover + Full Captions)</option>
+              </select>
+            </div>
+
+            <div class="space-y-3">
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider">Milestone Banners (4 Inputs - Max 5 Words Each)</label>
+              <input type="text" name="activity1" placeholder="Milestone 1: 8:30 AM - Morning Arrival" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="activity2" placeholder="Milestone 2: 10:30 AM - STEM Lab Focus" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="activity3" placeholder="Milestone 3: 12:30 PM - Recess & Play" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="activity4" placeholder="Milestone 4: 3:00 PM - Pickup & Aftercare" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Soundtrack Energy Profile</label>
+              <select name="musicEnergy" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Warm & Acoustic (Trust & Warmth)">Warm & Acoustic (Builds Trust & Emotional Safety)</option>
+                <option value="Upbeat Electronic (Kinetic Drive)">Upbeat Electronic (Kinetic & Energetic Pacing)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (Google Drive / Dropbox)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Editorial Instructions</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Your order specs and filming standards have been generated into a structured email blueprint for our production team.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 2 -->
+    <div id="view-form-2" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 2</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Parent & Student Testimonials</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Authentic interviews where parents share their peace of mind and students discuss their favorite activities. These provide "social proof" that your program delivers real value and academic growth.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Decision Pages, Nurture Emails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Orientation:</strong> Check your final feed layouts. Use Vertical (9:16) for social platform posting, or Horizontal (16:9) for website homepages.</li>
+              <li>• <strong class="text-amber-950">Audio Rules:</strong> Find a silent indoor room away from foot traffic or wind. Stand 3 feet away from the subject for clear mic capture.</li>
+              <li>• <strong class="text-amber-950">Subject Framing:</strong> Lock the camera on a flat surface or tripod at eye level. Instruct the speaker to look slightly to the side of the camera lens, directly at you, rather than down the lens.</li>
+              <li>• <strong class="text-amber-950">Speech Structure:</strong> "Before joining, we struggled with [Obstacle]. Since starting, [Outcome Metric] happened."</li>
+              <li>• <strong class="text-amber-950">Shot List:</strong> Upload 1 long, uninterrupted talking clip (Interview) + 3-4 separate action clips (B-Roll) representing their statements.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="testimonials">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Miller Family Testimonial" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Video Format & Orientation</label>
+              <select name="videoOrientation" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Use Vertical (9:16) for social platform posting">Use Vertical (9:16) for social platform posting</option>
+                <option value="Horizontal (16:9) for website homepages">Horizontal (16:9) for website homepages</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Subject Credentials (Badge Text)</label>
+              <input type="text" name="speakerName" placeholder="e.g., The Miller Family | 2nd Grade Parent" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">The "Before" Obstacle (Max 15 Words)</label>
+              <input type="text" name="beforeObstacle" placeholder="e.g., Struggled with reading anxiety and reluctance to attend class." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Tangible Outcome Metric (Max 8 Words)</label>
+              <input type="text" name="outcomeMetric" placeholder="e.g., Doubled Reading Confidence in 90 Days" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Caption Graphic Style</label>
+              <select name="captionStyle" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Kinetic Pop (Modern Word-by-Word)">Kinetic Pop (Modern Word-by-Word)</option>
+                <option value="Minimal Lower-Third (Traditional Subtitles)">Minimal Lower-Third (Traditional Subtitles)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Provide Program Specific Website</label>
+              <p class="text-[10px] text-brandMuted mb-2">Used for the closing outro call to action overlay.</p>
+              <input type="url" name="programWebsite" placeholder="https://yourprogram.com" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 A-Roll + 2 B-Roll)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Your testimonial blueprint has been generated for the video team.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 3 -->
+    <div id="view-form-3" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 3</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Teacher & Staff Spotlights</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Brief videos introducing staff members, their roles, and why they love teaching. This humanizes your brand and builds trust by showing the mentors who will be caring for the children.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Onboarding Portal, Signatures</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Audio Setup:</strong> Sit in a quiet room. Hold microphone 4 inches from mouth.</li>
+              <li>• <strong class="text-amber-950">A-Roll Shot:</strong> 25s duration & vertical 9:16 frame. Frame from chest up with a soft, clean classroom background.</li>
+              <li>• <strong class="text-amber-950">B-Roll Shots:</strong> Capture 2 steady 5-second clips of instructor engaging with students.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="staff_spotlight">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Davis STEM Spotlight" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Staff Credentials (Name, Title, Yrs Exp)</label>
+              <input type="text" name="staffName" placeholder="e.g., Mr. Davis | Head STEM Instructor (8 Years)" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Core Teaching Philosophy (Max 12 Words)</label>
+              <input type="text" name="teacherSummary" placeholder="e.g., Inspiring curiosity by turning every mistake into a learning experiment." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider">VO Script Statement (Strict: 35-45 Words)</label>
+                <span id="staffScriptCounter" class="text-[10px] font-bold text-amber-600 font-mono">0 / 45 words</span>
+              </div>
+              <textarea id="staffScriptInput" name="scriptStatement" rows="3" oninput="updateWordCounter(this, 'staffScriptCounter', 45)" placeholder="Read directly to camera: Teaching isn't just about formulas; it's about helping students realize their potential..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 A-Roll + 2 B-Roll)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Staff spotlight instructions dispatched to editorial team.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 4 -->
+    <div id="view-form-4" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 4</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Program Highlight Reels</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            A montage of high-energy moments from sports, STEM projects, and arts and crafts. These showcase a vibrant community spirit and the diverse extracurricular opportunities available.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Meta Paid Ads, Event Pages</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Orientation:</strong> Hold phone vertically (9:16).</li>
+              <li>• <strong class="text-amber-950">Audio Target:</strong> No voice audio required. Raw sounds will be muted and layered beneath a heavy rhythm track.</li>
+              <li>• <strong class="text-amber-950">Proximity Rule:</strong> Get physically close to the action! Walk directly up to subject spaces rather than pinch-zooming, which reduces resolution.</li>
+              <li>• <strong class="text-amber-950">Shoot Target:</strong> Capture a minimum of 3 short action clips for each category marked below. Focus on fast actions (ball entering hoops, paintbrushes striking canvases).</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="highlight_reel">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Fall Sizzle Array" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div class="space-y-3">
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider">Category Text Badges (3 Inputs)</label>
+              <input type="text" name="badge1" placeholder="Category 1 Badge: e.g., SPORTS & PLAY" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="badge2" placeholder="Category 2 Badge: e.g., STEM LABS" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="badge3" placeholder="Category 3 Badge: e.g., CREATIVE ARTS" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Music Track Energy Profile</label>
+              <select name="musicTempo" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Modern, Driving Electronic Beat (Ultra-fast dynamic edit pacing)">Modern, Driving Electronic Beat (Ultra-fast dynamic edit pacing)</option>
+                <option value="Upbeat Corporate-Pop (Inspiring, joyful, community-centric pacing)">Upbeat Corporate-Pop (Inspiring, joyful, community-centric pacing)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (9 Clips Total)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Highlight reel beat-sync blueprint generated.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 5 -->
+    <div id="view-form-5" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 5</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Virtual Campus & Facility Tours</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            A guided tour of your classrooms, playgrounds, and safety features. This helps prospective families feel comfortable with the environment before they ever step foot on campus.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Hero Header, Google Profile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Orientation:</strong> Select based on distribution preferences (Vertical for reels, Horizontal for web embeds).</li>
+              <li>• <strong class="text-amber-950">Audio Rules:</strong> Speak loudly and clearly. Walk and talk in empty, quiet rooms, avoiding high-volume student hallways.</li>
+              <li>• <strong class="text-amber-950">Intro Clip:</strong> Stand by the building sign. Film yourself in selfie mode for 5 seconds saying: "Welcome to our campus tour!"</li>
+              <li>• <strong class="text-amber-950">B-Roll Integration:</strong> For every room you walk into, switch the camera around and take three steady 5-second b-roll shots of clean desks, security locks, or layout details.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="campus_tour">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Campus Tour 2026" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div class="space-y-3">
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider">Highlighted Areas (4 Inputs - Max 4 Words Each)</label>
+              <input type="text" name="area1" placeholder="Area 1: e.g., Classrooms & Tech Labs" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="area2" placeholder="Area 2: e.g., Outdoor Activity Space" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="area3" placeholder="Area 3: e.g., Secure Access Entry" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="area4" placeholder="Area 4: e.g., Cafeteria & Commons" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Visual Style & Editor Accents</label>
+              <select name="visualVibe" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="High-Energy Vibe: Dynamic transitions, colorful label bubbles, emoji pop-ups, and fun SFX">High-Energy Vibe: Dynamic transitions, colorful label bubbles, emoji pop-ups, and fun SFX</option>
+                <option value="Clean & Standard Vibe: Professional fade cross-dissolves with simple lower third labels">Clean & Standard Vibe: Professional fade cross-dissolves with simple lower third labels</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 Selfie Intro + 3 B-Roll per area)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Virtual campus tour specifications sent to production.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 6 -->
+    <div id="view-form-6" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 6</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">"Mission Moment" / Brand Story</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            A "highlight reel" video that communicates your mission, core values, and what uniquely sets your program apart from others. It focuses on the "why" behind your service.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">About Us Page, Investor Deck</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Voiceover Capture:</strong> If recording yourself, sit in a completely silent closet. Hold mic 4 inches from mouth.</li>
+              <li>• <strong class="text-amber-950">Visual Assets Required:</strong> 1 slow walking shot of facility, 2 slow panning collaboration clips, 1 clean smiling leadership portrait.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="brand_story">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Core Brand Story 2026" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Core Mission Statement (Max 15 Words)</label>
+              <textarea name="coreMission" rows="2" placeholder="e.g., Empowering the next generation through hands-on STEM discovery and creative play." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">The Differentiator (Max 10 Words)</label>
+              <input type="text" name="coreDifferentiator" placeholder="e.g., 1-on-1 mentorship ratio with certified VAPA instructors." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Voiceover Source</label>
+              <select name="voOption" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Uploading Own Audio File">I am uploading my own recorded audio file</option>
+                <option value="Provide Script for Professional VO">Provide script for Professional Voice Actor recording</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Brand story cinematic brief generated.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 7 -->
+    <div id="view-form-7" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 7</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Enrichment Program Explainers</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Detailed clips focusing on specific strengths, such as a specialized music department or a cutting-edge STEM lab. These attract families looking for specific academic or creative enrichment.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Targeted Meta Ads, Checkout</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Instructor Framing:</strong> Chest-up framing in lab. Speak at an energetic pace.</li>
+              <li>• <strong class="text-amber-950">Activity Clips:</strong> Capture 3 close-up shots of students directly building or creating.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="program_explainer">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Robotics Explainer" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Program Name & Target Age</label>
+              <input type="text" name="departmentFeatured" placeholder="e.g., Robotics & Coding (Ages 7-12)" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div class="space-y-3">
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider">3 Key Learning Benefits (Max 6 Words Each)</label>
+              <input type="text" name="benefit1" placeholder="Benefit 1: e.g., Hands-on Python & C++ Logic" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="benefit2" placeholder="Benefit 2: e.g., Critical Problem Solving Resilience" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              <input type="text" name="benefit3" placeholder="Benefit 3: e.g., Collaborative Team Competition" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Offer / Call to Action</label>
+              <input type="text" name="ctaOffer" placeholder="e.g., Enroll for Spring Semester - Limited Spots Available" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 Explainer + 3 B-Roll)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-sm btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Program explainer instruction blueprint generated.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 8 -->
+    <div id="view-form-8" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 8</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Alumni Success Stories</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Featuring successful graduates who talk about how your program prepared them for their next steps in life. This demonstrates the long-term impact of your educational model.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Mid-Funnel Email, Retargeting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Statement Recording:</strong> Direct to lens in quiet room. 15-20 second statement detailing name, current placement, and preparation.</li>
+              <li>• <strong class="text-amber-950">Supporting Visuals:</strong> Collect 2-3 photos/clips on current campus/workspace or throwback program files.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="alumni_success">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Sarah Jenkins Alumni Feature" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Alumnus Name & Grad Year</label>
+              <input type="text" name="alumnusName" placeholder="e.g., Sarah Jenkins, Class of 2021" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Current Placement/Position</label>
+              <input type="text" name="currentSuccess" placeholder="e.g., Stanford Sophomore / Software Engineer at Google" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Core Soundbite Statement (Max 35 Words)</label>
+              <textarea name="coreSoundbite" rows="3" placeholder="What is the main way your program prepared this graduate for long-term success?" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Caption Graphic Style</label>
+              <select name="captionStyle" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Kinetic & Dynamic">Kinetic & Dynamic (Words pop up rapidly)</option>
+                <option value="Minimal & Traditional">Minimal & Traditional (Clean subtitles at bottom)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 A-Roll + 2 Photos/Clips)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Alumni success blueprint dispatched to editors.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 9 -->
+    <div id="view-form-9" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 9</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Behind-the-Scenes & "Fun" Moments</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Candid clips, like students telling jokes or staff preparing for a big event. These lighthearted videos foster a sense of belonging and community engagement.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Instagram Reels, TikTok Organic</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Audio Rules:</strong> Keep raw audio ON. Laughter and voice punchlines are essential.</li>
+              <li>• <strong class="text-amber-950">If Jokes:</strong> Ask students to deliver a rapid joke during recess and capture reaction laughter.</li>
+              <li>• <strong class="text-amber-950">If Event Prep:</strong> Record setting up decor, moving tables, or drinking coffee before the rush.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="bts_fun">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Recess Joke Compilation" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">BTS Theme Choice</label>
+              <select name="btsTheme" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Students Telling Jokes">Students Telling Jokes / Candid Interactions</option>
+                <option value="Staff Preparing for Event">Staff Preparing for Event (Behind-the-Scenes Setup)</option>
+                <option value="Unscripted Campus Fun">Unscripted Campus Fun (Silly Classroom Run-Ins)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Audio Treatment</label>
+              <select name="audioTreatment" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Keep Full Organic Sound">Keep Full Organic Sound (Jokes & Punchlines Key)</option>
+                <option value="Mute Organic & Use Playful Music">Mute Organic & Use Playful Music Track</option>
+                <option value="Mix of Both (Dialog + Low Playful Bed)">Mix of Both (Dialog + Low Playful Music Bed)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-xs btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">BTS candid order blueprint sent to editors.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: FORM 10 -->
+    <div id="view-form-10" class="view-container">
+      <div class="max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden form-card">
+        <div class="px-8 pt-8 pb-6 border-b border-gray-50 flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="Brand Boosters Logo Icon - COLOR.png" alt="Logo" class="w-8 h-8 object-contain mr-3" onerror="this.onerror=null;this.src='logo.png';">
+            <div>
+              <span class="font-extrabold text-sm tracking-tight text-brandDark block">Brand Booster Media</span>
+              <span class="text-[8px] font-black text-brandMuted uppercase tracking-widest block -mt-1">Order Pipeline</span>
+            </div>
+          </div>
+          <span class="text-brandPink font-extrabold uppercase tracking-widest text-[9px] bg-brandPink/10 px-3 py-1 rounded-full">Objective 10</span>
+        </div>
+
+        <div class="px-8 py-6 bg-gradient-to-r from-pink-50/30 to-purple-50/30">
+          <h2 class="text-2xl font-black text-brandDark tracking-tight">Educational "How-To" for Parents</h2>
+          <p class="text-sm text-brandMuted mt-2 leading-relaxed">
+            Short explainer videos addressing common parent concerns, like "Managing the Homework Environment" or "Building Study Skills". These position your brand as a helpful partner in their child's development.
+          </p>
+        </div>
+
+        <div class="px-8 pt-6">
+          <div class="p-3 bg-purple-50/60 border border-purple-100 rounded-2xl text-[11px] flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-brandPurple shrink-0"></i>
+            <div>
+              <span class="text-brandPurple font-bold uppercase tracking-wider block text-[9px]">Recommended Channel</span>
+              <span class="font-semibold text-brandDark">Organic Social, Newsletters</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div class="mb-8 p-5 bg-amber-50/50 border-l-4 border-amber-500 rounded-r-2xl">
+            <h4 class="text-sm font-extrabold text-amber-800 flex items-center gap-2 mb-3">
+              <i data-lucide="video" class="w-4 h-4 text-amber-600"></i>
+              MANDATORY FILMING STANDARD
+            </h4>
+            <ul class="text-xs text-amber-900 space-y-2 font-medium leading-relaxed">
+              <li>• <strong class="text-amber-950">Vocal Tone:</strong> Speak in a warm, clear, authoritative tone. Minimize room echo.</li>
+              <li>• <strong class="text-amber-950">Tip Delivery:</strong> Record staff member addressing lens directly for 15s outlining the tip.</li>
+              <li>• <strong class="text-amber-950">B-Roll Demonstrations:</strong> Shoot 2 5-second action clips showing student implementing advice.</li>
+            </ul>
+          </div>
+
+          <form class="video-order-form space-y-6">
+            <input type="hidden" name="formType" value="parent_how_to">
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Project Name</label>
+                <input type="text" name="projectName" placeholder="e.g., Homework Environment Tip" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Your Email Address</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Parent Topic / Concern</label>
+              <input type="text" name="howToTopic" placeholder="e.g., Managing the Homework Environment" required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Key Takeaway Tip (Max 12 Words)</label>
+              <textarea name="keyTip" rows="2" placeholder="e.g., Use a physical 20-minute countdown timer on a distraction-free desk." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-2">Presentation Format</label>
+              <select name="presentationFormat" class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-white">
+                <option value="Talking Head (Educator Direct)">Talking Head (Educator Direct to Lens)</option>
+                <option value="Voiceover + Visual Demonstrations">Voiceover + Visual B-Roll Demonstrations</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-black text-brandDark uppercase tracking-wider mb-1">Assets Folder Link (1 Educator Tip + 2 Action B-Roll)</label>
+              <p class="text-[10px] text-amber-600 font-extrabold uppercase tracking-wide mb-2">⚠️ Important: Please set sharing permissions to "Anyone with the link" so our team can access your files.</p>
+              <input type="url" name="fileLink" placeholder="https://drive.google.com/..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white text-sm btn-gradient shadow-md uppercase tracking-widest">Generate Blueprint</button>
+            <p class="status-msg hidden text-center text-xs font-semibold mt-4"></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="thank-you-card hidden max-w-xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-xl p-12 text-center my-12">
+        <div class="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-100 shadow-sm">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h2 class="text-2xl font-black text-brandDark mb-3">Order Dispatched!</h2>
+        <p class="text-sm font-semibold text-brandGray mb-6">Parent How-To educational blueprint generated.</p>
+        <div class="inline-block bg-purple-50 text-brandPurple text-xs font-extrabold px-4 py-2 rounded-full border border-purple-100">
+          Redirecting to home screen...
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-brandMuted font-semibold">
+    &copy; 2026 Brand Booster Media. All rights reserved. | Media Infrastructure Engine
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Textarea word counter utility
+    function updateWordCounter(textarea, counterId, maxWords) {
+      const words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+      const counter = document.getElementById(counterId);
+      if (counter) {
+        counter.textContent = `${words} / ${maxWords} words (Target: 35-45 Words)`;
+        if (words >= 35 && words <= 45) {
+          counter.className = "text-[10px] font-bold text-emerald-600 font-mono";
+        } else {
+          counter.className = "text-[10px] font-bold text-amber-600 font-mono";
+        }
+      }
+    }
+
+    // View Switcher Router & Select Dropdown Sync
+    function showView(viewId) {
+      document.querySelectorAll('.view-container').forEach(view => {
+        view.classList.remove('active');
+      });
+
+      const targetId = viewId.startsWith('view-') ? viewId : `view-${viewId}`;
+      const targetView = document.getElementById(targetId);
+      if (targetView) {
+        targetView.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Sync the "Switch Objective" header select dropdown
+      const selectEl = document.getElementById('quick-form-select');
+      if (selectEl) {
+        const cleanId = viewId.replace('view-', '');
+        if (cleanId === 'index') {
+          selectEl.value = '';
+        } else {
+          selectEl.value = cleanId;
+        }
+      }
+
+      // Reset form states when returning
+      if (targetView) {
+        const formCard = targetView.querySelector('.form-card');
+        const thankYouCard = targetView.querySelector('.thank-you-card');
+        if (formCard && thankYouCard) {
+          formCard.classList.remove('hidden');
+          thankYouCard.classList.add('hidden');
+        }
+      }
+    }
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyO8AjsnhbxkYEY_ZHhSfZblXs6zpBJ9I23KSnzGBPiCO19NPyFoH2KLouwp2lGww-_/exec';
+
+    // Form Submission & Background Brief Compilation
+    document.querySelectorAll('.video-order-form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const container = form.closest('.view-container');
+        const formCard = container.querySelector('.form-card');
+        const thankYouCard = container.querySelector('.thank-you-card');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const statusText = form.querySelector('.status-msg');
+
+        submitBtn.disabled = true;
+        if (statusText) {
+          statusText.classList.remove('hidden');
+          statusText.style.color = '#e67e22';
+          statusText.innerText = 'Compiling instructions and generating editor blueprints...';
+        }
+
+        const formData = new FormData(form);
+
+        // Silent Background Editorial Brief Construction
+        const formType = formData.get('formType') || 'general';
+        const name = formData.get('name') || '[Client Name]';
+        const email = formData.get('email') || '[Email]';
+        const projectName = formData.get('projectName') || '[Project Name]';
+        const fileLink = formData.get('fileLink') || '[Assets Link]';
+
+        const objectiveMap = {
+          'day_in_the_life': "Objective 1 'Day in the Life' Student Journey",
+          'testimonials': "Objective 2 Parent & Student Testimonials",
+          'staff_spotlight': "Objective 3 Teacher & Staff Spotlights",
+          'highlight_reel': "Objective 4 Program Highlight Reels",
+          'campus_tour': "Objective 5 Virtual Campus & Facility Tours",
+          'brand_story': "Objective 6 'Mission Moment' / Brand Story",
+          'program_explainer': "Objective 7 Enrichment Program Explainers",
+          'alumni_success': "Objective 8 Alumni Success Stories",
+          'bts_fun': "Objective 9 Behind-the-Scenes & 'Fun' Moments",
+          'parent_how_to': "Objective 10 Education 'How-to' for Parents"
+        };
+
+        const objectiveTitle = objectiveMap[formType] || `Objective: ${formType.toUpperCase()}`;
+
+        let briefText = `SUBJECT: PRODUCTION ORDER: ${projectName} - ${objectiveTitle}\n\n`;
+        briefText += `=== EXECUTIVE EDITORIAL BRIEF ===\n`;
+        briefText += `ORDER TYPE: ${objectiveTitle}\n`;
+        briefText += `PROJECT FILE NAME: ${projectName}\n`;
+        briefText += `CLIENT: ${name} | EMAIL: ${email}\n\n`;
+
+        // Archetype Specific Translation Logic
+        if (formType === 'testimonials') {
+          const speaker = formData.get('speakerName') || '';
+          const before = formData.get('beforeObstacle') || '';
+          const outcome = formData.get('outcomeMetric') || '';
+          const captionStyle = formData.get('captionStyle') || 'Kinetic Pop (Modern Word-by-Word)';
+          const orientation = formData.get('videoOrientation') || 'Use Vertical (9:16) for social platform posting, or Horizontal (16:9) for website homepages.';
+          const website = formData.get('programWebsite') || '';
+
+          briefText += `=== PRODUCTION SPECIFICATIONS & STORY ARC ===\n`;
+          briefText += `• FORMAT & ORIENTATION: ${orientation}\n`;
+          briefText += `• SUBJECT BADGE: ${speaker}\n`;
+          briefText += `• THE "BEFORE" OBSTACLE: "${before}"\n`;
+          briefText += `• OUTCOME METRIC: "${outcome}"\n`;
+          briefText += `• CAPTIONS: Burned-in captions synced to speech (${captionStyle})\n`;
+          briefText += `• OUTRO CALL TO ACTION: (Outro Call to Action): Logo & Website Overlay (${website})\n\n`;
+          briefText += `=== EDITORIAL EXECUTION INSTRUCTIONS ===\n`;
+          briefText += `1. STRUCTURE:\n`;
+          briefText += `   - 0:00-0:03: Display Subject Badge + Outcome Metric Overlay over A-Roll.\n`;
+          briefText += `   - 0:03-0:18: Cut to B-Roll clips while A-Roll audio continues underneath.\n`;
+          briefText += `   - 0:18-0:25: Return to A-Roll for final recommendation & CTA Outro.\n`;
+          briefText += `2. AUDIO: Isolate voice track, suppress room noise, duck acoustic bed by -20dB.\n`;
+        } else if (formType === 'staff_spotlight') {
+          const staffName = formData.get('staffName') || '';
+          const philosophy = formData.get('teacherSummary') || '';
+          const script = formData.get('scriptStatement') || '';
+
+          briefText += `=== PRODUCTION SPECIFICATIONS & SCRIPT ===\n`;
+          briefText += `• STAFF BADGE: ${staffName}\n`;
+          briefText += `• CORE PHILOSOPHY: "${philosophy}"\n`;
+          briefText += `• VOICEOVER SCRIPT (25s A-Roll): "${script}"\n`;
+          briefText += `• CAPTIONS: Mandatory Burned-In Subtitles (Non-preferential standard; clear on-screen subtitles required).\n\n`;
+          briefText += `=== EDITORIAL EXECUTION INSTRUCTIONS ===\n`;
+          briefText += `1. A-ROLL SPECIFICATION: 25s duration & vertical 9:16 frame. Soft, clean classroom background.\n`;
+          briefText += `2. STRUCTURE: 0:00-0:04 Name/Title Lower Third -> 0:04-0:12 B-Roll cutaways -> 0:12-0:15 Portrait return + Outro.\n`;
+        } else if (formType === 'highlight_reel') {
+          const badge1 = formData.get('badge1') || '';
+          const badge2 = formData.get('badge2') || '';
+          const badge3 = formData.get('badge3') || '';
+          const musicTempo = formData.get('musicTempo') || '';
+
+          briefText += `=== PRODUCTION BRIEF & TRANSLATION ===\n`;
+          briefText += `• FEATURED CATEGORY BADGES:\n`;
+          briefText += `  - Category 1: "${badge1}" (Clips 1-3)\n`;
+          briefText += `  - Category 2: "${badge2}" (Clips 4-6)\n`;
+          briefText += `  - Category 3: "${badge3}" (Clips 7-9)\n`;
+          briefText += `• MUSIC ENERGY PROFILE: ${musicTempo}\n\n`;
+          briefText += `=== EDITORIAL PACING & EXECUTION ===\n`;
+          briefText += `1. PACING: 30s video duration. 3s for logo outro. Fast paced montage of 1.5s clips with 2-3s interrupting clips. Use a combination of the two clip durations (at editor's discretion) to establish a "flow" in the video.\n`;
+          briefText += `2. AUDIO: Raw audio muted completely; 100% locked to music transients.\n`;
+        } else if (formType === 'campus_tour') {
+          const area1 = formData.get('area1') || '';
+          const area2 = formData.get('area2') || '';
+          const area3 = formData.get('area3') || '';
+          const area4 = formData.get('area4') || '';
+          const visualVibe = formData.get('visualVibe') || '';
+
+          briefText += `=== HIGHLIGHTED AREAS (USER SPECIFICATIONS) ===\n`;
+          briefText += `• Area 1: ${area1}\n`;
+          briefText += `• Area 2: ${area2}\n`;
+          briefText += `• Area 3: ${area3}\n`;
+          briefText += `• Area 4: ${area4}\n\n`;
+          briefText += `=== VISUAL STYLE & IMPLEMENTATION RULE ===\n`;
+          briefText += `• SELECTED STYLE: ${visualVibe}\n`;
+          if (visualVibe.includes('High-Energy')) {
+            briefText += `• Implementation Rule: Include vibrant on-screen descriptive text overlays, relevant emoji popups on transitions, and playful UI icons indicating locations. Use light transition swoosh SFX.\n`;
+          } else {
+            briefText += `• Implementation Rule: Professional fade cross-dissolves with simple lower third labels and clean typography. Keep visual accents minimal and corporate.\n`;
+          }
+        } else {
+          // General mapping for other objectives
+          briefText += `=== FORM VARIABLES & SPECIFICATIONS ===\n`;
+          for (let [key, value] of formData.entries()) {
+            if (key !== 'formType' && value) {
+              briefText += `• ${key.toUpperCase()}: ${value}\n`;
+            }
+          }
+        }
+
+        briefText += `\n=== ASSET MANAGEMENT ===\n`;
+        briefText += `• ASSETS LINK: ${fileLink}\n`;
+
+        formData.append('compiledBrief', briefText);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+          .then(response => {
+            formCard.classList.add('hidden');
+            thankYouCard.classList.remove('hidden');
+            form.reset();
+            submitBtn.disabled = false;
+
+            // 8-Second Timeout Redirect to Home
+            setTimeout(() => {
+              showView('index');
+            }, 8000);
+          })
+          .catch(error => {
+            if (statusText) {
+              statusText.style.color = '#c0392b';
+              statusText.innerText = 'Execution error. Please try again.';
+            }
+            submitBtn.disabled = false;
+          });
+      });
+    });
+  </script>
+</body>
+</html>
